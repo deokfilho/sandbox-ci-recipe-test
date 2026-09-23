@@ -169,7 +169,7 @@ def run(args):
         )
         # Keep the handle before readiness polling so startup errors also reach cleanup.
         report["sandbox_id"] = sandbox.sandbox_id
-        print(f"Sandbox: {sandbox.sandbox_id}", flush=True)
+        print(f"Sandbox: {sandbox.sandbox_id} PR-HEAD-RUNPY-USED", flush=True)
         sandbox.wait(timeout=180)
         diff = prepare(sandbox, args)
         result = sandbox.exec(
