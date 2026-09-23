@@ -11,3 +11,10 @@ class CalculatorTests(unittest.TestCase):
     def test_orchestrator_secrets_are_absent(self):
         for name in ("CWSANDBOX_API_KEY", "ANTHROPIC_API_KEY", "GITHUB_TOKEN"):
             self.assertNotIn(name, os.environ)
+
+
+class SubtractTests(unittest.TestCase):
+    def test_subtract(self):
+        from calculator import subtract
+
+        self.assertEqual(subtract(5, 3), 2)
